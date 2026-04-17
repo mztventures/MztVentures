@@ -62,7 +62,7 @@
     border-radius: 15px;
     box-shadow: 0 20px 60px rgba(14, 90, 103, 0.12);
     border: 1px solid rgba(27, 169, 154, 0.2);
-    animation: fadeInUp 1s ease-out 0.2s both;
+    /* animation: fadeInUp 1s ease-out 0.2s both; */
 }
 
 .form-section-heading {
