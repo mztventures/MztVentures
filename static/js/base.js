@@ -69,6 +69,7 @@ function setNavbarBackground() {
 }
 
 function setupScrollReveal() {
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
     const revealTargets = document.querySelectorAll([
         'main section',
         'body > section',
@@ -82,6 +83,14 @@ function setupScrollReveal() {
     ].join(','));
 
     if (!revealTargets.length) {
+        return;
+    }
+
+    if (isMobile) {
+        revealTargets.forEach((element) => {
+            element.style.opacity = '1';
+            element.style.transform = 'translateY(0)';
+        });
         return;
     }
 
