@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visa Information Form - MZTVENTURES</title>
+
+    <!-- Standard favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+
+    <!-- Visa CSS -->
+    <link rel="stylesheet" href="/static/css/base.css">
+    <link rel="stylesheet" href="/static/css/visa.css">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- EmailJS Library -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../index.html">
+                <img src="/static/images/favicon.png" alt="MZTVENTURES Logo" class="navbar-logo"> <SPAN
+                    class="subtitle_logo">MZTVENTURES</SPAN>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#about-us">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="visa.html">Visa Form</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#testimonials">Testimonials</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero page-hero d-flex flex-column justify-content-center" style="background: linear-gradient(135deg, rgba(0, 0, 0, 0.5) 70%), url(/static/images/hero-lake.jpg) center / cover no-repeat; background-attachment: fixed;">
+        <div class="hero-content " style="text-align: center; ">
+            <p class="hero-subtitle">Complete Your Application</p>
+            <h1 class="hero-title">Visa Information Form</h1>
+            <p class="hero-description" style="max-width: 700px; margin: 20px auto;">
+                Please complete the following form with your accurate information. All fields marked with an asterisk (*) are required.
+            </p>
+        </div>
+    </section>
+
+    <!-- Visa Information Form Section -->
+    <section class="visa-section" id="visa-info">
+        <div class="visa-container">
+            <div class="visa-header">
+                <p class="section-subtitle">Documentation</p>
+                <h2 class="section-title">Visa Information Form</h2>
+                <p class="section-description">
+                    Please complete the following form with your accurate information. All fields marked with an
+                    asterisk (*) are required.
+                </p>
+            </div>
+
+            <!-- Info Box -->
+            <div class="info-box">
+                <strong>📋 Important Notice:</strong> Please ensure all information provided is accurate and matches
+                your passport and travel documents. Incomplete or incorrect information may result in visa application
+                delays.
+            </div>
+
+            <!-- Visa Form -->
+            <div class="visa-form-wrapper">
+                <!-- Alert Container -->
+                <div id="visaAlert" style="display: none; margin-bottom: 20px;">
+                    <div id="visaAlertContent" style="padding: 15px; border-radius: 8px; font-weight: 500;">
+                        <div id="visaAlertMessage"></div>
+                        <div id="visaAlertId" style="margin-top: 8px; font-size: 0.95rem;"></div>
+                    </div>
+                </div>
+
+                <form id="visaForm">
+
+                    <!-- PERSONAL INFORMATION SECTION -->
+                    <h3 class="form-section-heading">Personal Information</h3>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="first-name" class="required">First Name</label>
+                            <input type="text" id="first-name" name="first_name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="last-name" class="required">Last Name</label>
+                            <input type="text" id="last-name" name="last_name" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="middle-name">Middle Name</label>
+                            <input type="text" id="middle-name" name="middle_name">
+                        </div>
+                        <div class="form-group">
+                            <label for="dob" class="required">Date of Birth</label>
+                            <input type="date" id="dob" name="date_of_birth" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="gender" class="required">Gender</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="gender" value="male" required> Male</label>
+                                <label><input type="radio" name="gender" value="female"> Female</label>
+                                <label><input type="radio" name="gender" value="other"> Other</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="nationality" class="required">Nationality</label>
+                            <input type="text" id="nationality" name="nationality" placeholder="e.g., Pakistani"
+                                required>
+                        </div>
+                    </div>
+
+                    <!-- CONTACT INFORMATION SECTION -->
+                    <h3 class="form-section-heading">Contact Information</h3>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email" class="required">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone" class="required">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+44 7879 091190" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="alternate-phone">Alternate Phone Number</label>
+                            <input type="tel" id="alternate-phone" name="alternate_phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="whatsapp">WhatsApp Number</label>
+                            <input type="tel" id="whatsapp" name="whatsapp_number">
+                        </div>
+                    </div>
+
+                    <div class="form-row full">
+                        <div class="form-group">
+                            <label for="address" class="required">Residential Address</label>
+                            <textarea id="address" name="address" required></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="city" class="required">City</label>
+                            <input type="text" id="city" name="city" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="state" class="required">State/Province</label>
+                            <input type="text" id="state" name="state" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="postal-code" class="required">Postal Code</label>
+                            <input type="text" id="postal-code" name="postal_code" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="country" class="required">Country</label>
+                            <input type="text" id="country" name="country" required>
+                        </div>
+                    </div>
+
+                    <!-- PASSPORT INFORMATION SECTION -->
+                    <h3 class="form-section-heading">Passport Information</h3>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="passport-number" class="required">Passport Number</label>
+                            <input type="text" id="passport-number" name="passport_number" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="passport-type" class="required">Passport Type</label>
+                            <select id="passport-type" name="passport_type" required>
+                                <option value="">Select Passport Type</option>
+                                <option value="regular">Regular</option>
+                                <option value="official">Official</option>
+                                <option value="diplomatic">Diplomatic</option>
+                                <option value="temporary">Temporary</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="issue-date" class="required">Passport Issue Date</label>
+                            <input type="date" id="issue-date" name="passport_issue_date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="expiry-date" class="required">Passport Expiry Date</label>
+                            <input type="date" id="expiry-date" name="passport_expiry_date" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="issuing-country" class="required">Country of Issue</label>
+                            <input type="text" id="issuing-country" name="passport_issuing_country" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="issuing-place" class="required">Place of Issue</label>
+                            <input type="text" id="issuing-place" name="passport_issuing_place" required>
+                        </div>
+                    </div>
+
+                    <!-- VISA DETAILS SECTION -->
+                    <h3 class="form-section-heading">Visa Details</h3>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="visa-destination" class="required">Destination Country</label>
+                            <input type="text" id="visa-destination" name="visa_destination"
+                                placeholder="e.g., France, UK, USA" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="visa-type" class="required">Visa Type</label>
+                            <select id="visa-type" name="visa_type" required>
+                                <option value="">Select Visa Type</option>
+                                <option value="tourist">Tourist/Holiday</option>
+                                <option value="business">Business</option>
+                                <option value="work">Work</option>
+                                <option value="student">Student</option>
+                                <option value="family">Family Visit</option>
+                                <option value="transit">Transit</option>
+                                <option value="residential">Residency</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="visa-category" class="required">Visa Category</label>
+                            <select id="visa-category" name="visa_category" required>
+                                <option value="">Select Category</option>
+                                <option value="single_entry">Single Entry</option>
+                                <option value="multiple_entry">Multiple Entry</option>
+                                <option value="short_stay">Short Stay</option>
+                                <option value="long_stay">Long Stay</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="duration">Duration of Stay (Days)</label>
+                            <input type="number" id="duration" name="duration_of_stay" min="1">
+                        </div>
+                    </div>
+
+                    <!-- TRAVEL INFORMATION SECTION -->
+                    <h3 class="form-section-heading">Travel Information</h3>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="departure-date" class="required">Intended Departure Date</label>
+                            <input type="date" id="departure-date" name="departure_date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="return-date" class="required">Intended Return Date</label>
+                            <input type="date" id="return-date" name="return_date" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="entry-city" class="required">Port of Entry</label>
+                            <input type="text" id="entry-city" name="port_of_entry"
+                                placeholder="e.g., London, Paris, New York" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="exit-city" class="required">Port of Exit</label>
+                            <input type="text" id="exit-city" name="port_of_exit" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row full">
+                        <div class="form-group">
+                            <label for="purpose-description" class="required">Purpose of Visit</label>
+                            <textarea id="purpose-description" name="purpose_of_visit"
+                                placeholder="Describe the purpose of your visit in detail..." required></textarea>
+                        </div>
+                    </div>
+
+                    <!-- EMPLOYMENT INFORMATION SECTION -->
+                    <h3 class="form-section-heading">Employment & Income Information</h3>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="employment-status" class="required">Employment Status</label>
+                            <select id="employment-status" name="employment_status" required>
+                                <option value="">Select Status</option>
+                                <option value="employed">Employed</option>
+                                <option value="self_employed">Self-Employed</option>
+                                <option value="student">Student</option>
+                                <option value="retired">Retired</option>
+                                <option value="homemaker">Homemaker</option>
+                                <option value="unemployed">Unemployed</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="occupation" class="required">Occupation/Designation</label>
+                            <input type="text" id="occupation" name="occupation" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="employer-name">Employer Name</label>
+                            <input type="text" id="employer-name" name="employer_name">
+                        </div>
+                        <div class="form-group">
+                            <label for="employer-address">Employer Address</label>
+                            <input type="text" id="employer-address" name="employer_address">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="job-title">Job Title</label>
+                            <input type="text" id="job-title" name="job_title">
+                        </div>
+                        <div class="form-group">
+                            <label for="years-employment">Years of Employment</label>
+                            <input type="number" id="years-employment" name="years_of_employment" min="0">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="monthly-income" class="required">Monthly Income (USD)</label>
+                            <input type="number" id="monthly-income" name="monthly_income" min="0" step="0.01" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="annual-income" class="required">Annual Income (USD)</label>
+                            <input type="number" id="annual-income" name="annual_income" min="0" step="0.01" required>
+                        </div>
+                    </div>
+
+                    <!-- FAMILY INFORMATION SECTION -->
+                    <h3 class="form-section-heading">Family Information</h3>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="marital-status" class="required">Marital Status</label>
+                            <select id="marital-status" name="marital_status" required>
+                                <option value="">Select Status</option>
+                                <option value="single">Single</option>
+                                <option value="married">Married</option>
+                                <option value="widowed">Widowed</option>
+                                <option value="divorced">Divorced</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="number-dependents">Number of Dependents</label>
+                            <input type="number" id="number-dependents" name="number_of_dependents" min="0">
+                        </div>
+                    </div>
+
+                    <div class="form-row full">
+                        <div class="form-group">
+                            <label for="spouse-name">Spouse Name (if applicable)</label>
+                            <input type="text" id="spouse-name" name="spouse_name">
+                        </div>
+                    </div>
+
+                    <!-- PREVIOUS VISA & TRAVEL HISTORY SECTION -->
+                    <h3 class="form-section-heading">Previous Visa & Travel History</h3>
+
+                    <div class="form-row full">
+                        <div class="form-group">
+                            <label for="previous-visas" class="required">Have you had any visa rejections?</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="previous_visa_rejections" value="yes" required>
+                                    Yes</label>
+                                <label><input type="radio" name="previous_visa_rejections" value="no"> No</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row full">
+                        <div class="form-group">
+                            <label for="visa-rejection-details">If yes, please provide details</label>
+                            <textarea id="visa-rejection-details" name="visa_rejection_details"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-row full">
+                        <div class="form-group">
+                            <label for="visited-countries">Countries visited in the last 5 years</label>
+                            <textarea id="visited-countries" name="visited_countries"
+                                placeholder="List countries and approximate dates..."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="current-visas" class="required">Do you have a valid visa for the
+                                destination?</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="current_valid_visa" value="yes" required> Yes</label>
+                                <label><input type="radio" name="current_valid_visa" value="no"> No</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="visa-validity">Visa Validity</label>
+                            <input type="date" id="visa-validity" name="visa_validity_date">
+                        </div>
+                    </div>
+
+                    <!-- SPONSOR INFORMATION SECTION -->
+                    <h3 class="form-section-heading">Sponsor/Inviter Information (if applicable)</h3>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="sponsor-name">Sponsor/Inviter Name</label>
+                            <input type="text" id="sponsor-name" name="sponsor_name">
+                        </div>
+                        <div class="form-group">
+                            <label for="sponsor-relationship">Relationship</label>
+                            <input type="text" id="sponsor-relationship" name="sponsor_relationship">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="sponsor-address">Sponsor Address</label>
+                            <input type="text" id="sponsor-address" name="sponsor_address">
+                        </div>
+                        <div class="form-group">
+                            <label for="sponsor-country">Sponsor Country</label>
+                            <input type="text" id="sponsor-country" name="sponsor_country">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="sponsor-phone">Sponsor Phone</label>
+                            <input type="tel" id="sponsor-phone" name="sponsor_phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="sponsor-email">Sponsor Email</label>
+                            <input type="email" id="sponsor-email" name="sponsor_email">
+                        </div>
+                    </div>
+
+                    <!-- DECLARATIONS SECTION -->
+                    <h3 class="form-section-heading">Documents & Agreements</h3>
+
+                    <div class="info-box">
+                        <strong>📄 Document Submission:</strong> After submitting this form, our team will contact you
+                        to collect your required documents (passport, photo, bank statements, etc.) via WhatsApp or
+                        email. This helps ensure secure and organized document handling.
+                    </div>
+
+                    <div class="form-row full">
+                        <div class="form-group">
+                            <label class="checkbox-group">
+                                <input type="checkbox" name="declaration_accuracy" required>
+                                I hereby declare that the information provided is accurate and complete to the best of
+                                my knowledge.
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-row full">
+                        <div class="form-group">
+                            <label class="checkbox-group">
+                                <input type="checkbox" name="declaration_honesty" required>
+                                I declare that I have not concealed any information that might affect my visa
+                                application.
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-row full">
+                        <div class="form-group">
+                            <label class="checkbox-group">
+                                <input type="checkbox" name="declaration_privacy">
+                                I agree to receive updates about my visa application via email/WhatsApp.
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- FORM ACTIONS -->
+                    <div class="form-actions">
+                        <button type="submit" class="submit-btn">Submit Application</button>
+                        <button type="reset" class="reset-btn">Clear Form</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <!-- Logo & About Section -->
+            <div class="logo-about-container">
+
+
+
+                <!-- About Section -->
+                <div class="footer-about-content">
+                    <div class="footer-section">
+                        <h4>About MZTVENTURES</h4>
+                        <p>We are a leading travel agency dedicated to creating unforgettable experiences. From planning
+                            to execution, we handle every detail to make your journey seamless and memorable.</p>
+                        <div class="social-links">
+                            <a href="https://www.facebook.com/mztventures" target="_blank" title="Facebook"><i
+                                    class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.twitter.com/mztventures" target="_blank" title="Twitter"><i
+                                    class="fab fa-twitter"></i></a>
+                            <a href="https://www.instagram.com/mztventures" target="_blank" title="Instagram"><i
+                                    class="fab fa-instagram"></i></a>
+                                <a href="https://www.tiktok.com/@mztventures" target="_blank" title="TikTok"><i
+                                    class="fab fa-tiktok"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../index.html#about-us">About Us</a></li>
+                    <li><a href="../index.html#services">Services</a></li>
+                    <li><a href="../index.html#testimonials">Testimonials</a></li>
+                    <li><a href="../index.html#appointment">Book Appointment</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="visa.html">Visa Information</a></li>
+                </ul>
+            </div>
+
+            <!-- Services -->
+            <div class="footer-section">
+                <h4>Our Services</h4>
+                <ul>
+                    <li><a href="../index.html#services">Visa Assistance</a></li>
+                    <li><a href="../index.html#services">Visa Consultancy</a></li>
+                    <li><a href="visa.html">Document Checklist</a></li>
+                    <li><a href="../index.html#appointment">Book Consultation</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="footer-section">
+                <h4>Contact Information</h4>
+                <div class="footer-contact-item">
+                    <div class="footer-contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div class="footer-contact-info">
+                        <h5>Location</h5>
+                        <p>53 st Johns Rd UK</p>
+                        <p>Slough SL2 5EZ</p>
+                        <p>UK</p>
+                    </div>
+                </div>
+                <div class="footer-contact-item">
+                    <div class="footer-contact-icon"><i class="fas fa-phone"></i></div>
+                    <div class="footer-contact-info">
+                        <h5>Phone</h5>
+                        <p>+44 7879 091190</p>
+                    </div>
+                </div>
+                <div class="footer-contact-item">
+                    <div class="footer-contact-icon"><i class="fas fa-envelope"></i></div>
+                    <div class="footer-contact-info">
+                        <h5>Email</h5>
+                        <p>visa@mztventures.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-divider"></div>
+
+        <div class="footer-bottom">
+            <div class="footer-copyright">
+                &copy; 2024 MZTVENTURES. All rights reserved.
+            </div>
+            <div class="footer-links">
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms-of-service.html">Terms of Service</a>
+                <a href="cookie-policy.html">Cookie Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for file uploads -->
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="/static/js/base.js"></script>
+    <script>
+        // Initialize EmailJS
+        // Replace with your actual EmailJS Public Key
+        emailjs.init('n63-2pHxxOUI7jqvf');
+
+        // Visa Form Handler
+        document.getElementById('visaForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const form = this;
+
+            // Generate visa ID
+            const visaId = 'VISA-' + Date.now();
+
+            // Get alert elements
+            const alertDiv = document.getElementById('visaAlert');
+            const alertContent = document.getElementById('visaAlertContent');
+            const alertMessage = document.getElementById('visaAlertMessage');
+            const alertId = document.getElementById('visaAlertId');
+
+            // Collect form data (text fields only - files handled separately)
+            const formData = new FormData(form);
+
+            // Prepare email parameters for EmailJS
+            const emailParams = {
+                to_email: 'visa@mztventures.com', // Change this to your receiving email
+                visa_application_id: visaId,
+
+                // Personal Information
+                first_name: document.getElementById('first-name').value,
+                last_name: document.getElementById('last-name').value,
+                middle_name: document.getElementById('middle-name').value,
+                date_of_birth: document.getElementById('dob').value,
+                gender: document.querySelector('input[name="gender"]:checked')?.value || '',
+                nationality: document.getElementById('nationality').value,
+
+                // Contact Information
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                alternate_phone: document.getElementById('alternate-phone').value,
+                whatsapp: document.getElementById('whatsapp').value,
+                address: document.getElementById('address').value,
+                city: document.getElementById('city').value,
+                state: document.getElementById('state').value,
+                postal_code: document.getElementById('postal-code').value,
+                country: document.getElementById('country').value,
+
+                // Passport Information
+                passport_number: document.getElementById('passport-number').value,
+                passport_type: document.getElementById('passport-type').value,
+                passport_issue_date: document.getElementById('issue-date').value,
+                passport_expiry_date: document.getElementById('expiry-date').value,
+                issuing_country: document.getElementById('issuing-country').value,
+                issuing_place: document.getElementById('issuing-place').value,
+
+                // Visa Details
+                visa_destination: document.getElementById('visa-destination').value,
+                visa_type: document.getElementById('visa-type').value,
+                visa_category: document.getElementById('visa-category').value,
+                duration_of_stay: document.getElementById('duration').value,
+
+                // Travel Information
+                departure_date: document.getElementById('departure-date').value,
+                return_date: document.getElementById('return-date').value,
+                port_of_entry: document.getElementById('entry-city').value,
+                port_of_exit: document.getElementById('exit-city').value,
+                purpose_of_visit: document.getElementById('purpose-description').value,
+
+                // Employment Information
+                employment_status: document.getElementById('employment-status').value,
+                occupation: document.getElementById('occupation').value,
+                employer_name: document.getElementById('employer-name').value,
+                employer_address: document.getElementById('employer-address').value,
+                job_title: document.getElementById('job-title').value,
+                years_of_employment: document.getElementById('years-employment').value,
+                monthly_income: document.getElementById('monthly-income').value,
+                annual_income: document.getElementById('annual-income').value,
+
+                // Family Information
+                marital_status: document.getElementById('marital-status').value,
+                number_of_dependents: document.getElementById('number-dependents').value,
+                spouse_name: document.getElementById('spouse-name').value,
+
+                // Travel History
+                visa_rejections: document.querySelector('input[name="previous_visa_rejections"]:checked')?.value || '',
+                visa_rejection_details: document.getElementById('visa-rejection-details').value,
+                visited_countries: document.getElementById('visited-countries').value,
+                current_valid_visa: document.querySelector('input[name="current_valid_visa"]:checked')?.value || '',
+                visa_validity_date: document.getElementById('visa-validity').value,
+
+                // Sponsor Information
+                sponsor_name: document.getElementById('sponsor-name').value,
+                sponsor_relationship: document.getElementById('sponsor-relationship').value,
+                sponsor_address: document.getElementById('sponsor-address').value,
+                sponsor_country: document.getElementById('sponsor-country').value,
+                sponsor_phone: document.getElementById('sponsor-phone').value,
+                sponsor_email: document.getElementById('sponsor-email').value,
+
+                reply_to: document.getElementById('email').value
+            };
+
+            // Show loading state
+            alertContent.style.backgroundColor = 'rgba(27, 169, 154, 0.12)';
+            alertContent.style.color = '#0E5A67';
+            alertContent.style.border = '1px solid #1BA99A';
+            alertMessage.textContent = 'Processing your visa application...';
+            alertId.textContent = '';
+            alertDiv.style.display = 'block';
+
+            // Send email using EmailJS
+            emailjs.send(
+                'service_erj8ph9',           // Replace with your EmailJS Service ID
+                'visa_notification_32423',     // Replace with your EmailJS Template ID
+                emailParams
+            ).then(function (response) {
+                // Success: Update alert styling
+                alertContent.style.backgroundColor = 'rgba(27, 169, 154, 0.15)';
+                alertContent.style.color = '#0E5A67';
+                alertContent.style.border = '1px solid #1BA99A';
+                alertMessage.textContent = '✓ Your visa application has been successfully submitted! Our team will contact you within 2-3 business days. Please share your documents via WhatsApp or email as discussed.';
+                alertId.textContent = 'Application ID: ' + visaId;
+
+                console.log('Visa application email sent successfully:', response);
+
+                // Reset form
+                form.reset();
+
+                // Hide alert after 8 seconds
+                setTimeout(() => {
+                    alertDiv.style.display = 'none';
+                }, 8000);
+
+                // Scroll to alert
+                alertDiv.scrollIntoView({ behavior: 'smooth' });
+
+            }).catch(function (error) {
+                // Error: Show error message
+                alertContent.style.backgroundColor = 'rgba(27, 169, 154, 0.12)';
+                alertContent.style.color = '#0E5A67';
+                alertContent.style.border = '1px solid #1BA99A';
+                alertMessage.textContent = '✗ Error submitting your application. Please try again or contact us directly.';
+                alertId.textContent = 'Error: ' + error.text;
+
+                console.error('Visa application submission failed:', error);
+
+                // Hide alert after 8 seconds
+                setTimeout(() => {
+                    alertDiv.style.display = 'none';
+                }, 8000);
+
+                // Scroll to alert
+                alertDiv.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+
+    <a href="https://wa.me/447879091190" class="floating-whatsapp" target="_blank" rel="noopener"
+        title="Chat on WhatsApp" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+</body>
+
+</html>

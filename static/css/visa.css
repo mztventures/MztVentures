@@ -1,0 +1,344 @@
+/* Global box-sizing */
+* {
+    box-sizing: border-box;
+}
+
+/* ============ VISA FORM SECTION ============ */
+.visa-section {
+    padding: 100px 20px;
+    background: linear-gradient(135deg, #ffffff 0%, #E8F4FA 100%);
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+}
+
+.visa-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.visa-header {
+    text-align: center;
+    margin-bottom: 80px;
+    animation: fadeInUp 1s ease-out;
+}
+
+.section-subtitle {
+    font-size: 1rem;
+    color: #1BA99A;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #0E5A67;
+    margin-bottom: 30px;
+    background: linear-gradient(135deg, #0E5A67 0%, #1BA99A 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.section-description {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+/* Visa Form Container */
+.visa-form-wrapper {
+    background: rgba(255, 255, 255, 0.82);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 20px 60px rgba(14, 90, 103, 0.12);
+    border: 1px solid rgba(27, 169, 154, 0.2);
+    animation: fadeInUp 1s ease-out 0.2s both;
+}
+
+.form-section-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: #0E5A67;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 3px solid #1BA99A;
+}
+
+.form-section-heading:first-of-type {
+    margin-top: 0;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.form-row.full {
+    grid-template-columns: 1fr;
+}
+
+.form-row.three-col {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.form-group label {
+    display: block;
+    color: #0E5A67;
+    font-weight: 600;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+}
+
+.required::after {
+    content: ' *';
+    color: #0E5A67;
+    font-weight: 700;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #f0f0f0;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    color: #0E5A67;
+    transition: all 0.3s ease;
+    background-color: #fafafa;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #1BA99A;
+    background-color: white;
+    box-shadow: 0 0 0 3px rgba(27, 169, 154, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Radio & Checkbox Groups */
+.radio-group,
+.checkbox-group {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.radio-group label,
+.checkbox-group label {
+    font-weight: 500;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.radio-group input[type="radio"],
+.checkbox-group input[type="checkbox"] {
+    width: auto;
+    margin: 0;
+}
+
+/* Help Text */
+.help-text {
+    font-size: 0.85rem;
+    color: #999;
+    margin-top: 5px;
+}
+
+.form-group input[type="date"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="number"] {
+    width: 100%;
+}
+
+/* Document Upload */
+.file-upload-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.file-input-label {
+    display: inline-block;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #1BA99A, #0E5A67);
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.file-input-label:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(27, 169, 154, 0.3);
+}
+
+.file-input-label input {
+    display: none;
+}
+
+.file-name {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+/* Submit Button */
+.form-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 50px;
+    padding-top: 30px;
+    border-top: 2px solid #f0f0f0;
+}
+
+.submit-btn {
+    background: linear-gradient(135deg, #1BA99A, #0E5A67);
+    color: white;
+    border: none;
+    padding: 15px 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(27, 169, 154, 0.3);
+}
+
+.submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(27, 169, 154, 0.4);
+    color: white;
+}
+
+.reset-btn {
+    background: transparent;
+    color: #1BA99A;
+    border: 2px solid #1BA99A;
+    padding: 13px 40px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.reset-btn:hover {
+    background: #1BA99A;
+    color: white;
+}
+
+/* Info Box */
+.info-box {
+    background: rgba(27, 169, 154, 0.1);
+    border-left: 4px solid #1BA99A;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    color: #555;
+    line-height: 1.7;
+}
+
+.info-box strong {
+    color: #0E5A67;
+}
+
+/* Alert Styles */
+#visaAlert {
+    margin-bottom: 20px;
+    animation: slideDown 0.3s ease-out;
+}
+
+#visaAlertContent {
+    padding: 15px;
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .visa-section {
+        padding: 60px 15px;
+    }
+    
+    .visa-form-wrapper {
+        padding: 30px;
+    }
+    
+    .section-title {
+        font-size: 2.5rem;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .form-row.three-col {
+        grid-template-columns: 1fr;
+    }
+    
+    .radio-group,
+    .checkbox-group {
+        gap: 20px;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+    }
+    
+    .submit-btn,
+    .reset-btn {
+        width: 100%;
+    }
+}
