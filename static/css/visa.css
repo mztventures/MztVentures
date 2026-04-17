@@ -342,3 +342,39 @@
         width: 100%;
     }
 }
+
+
+/* Desktop/Laptop View */
+@media (min-width: 769px) {
+    .visa-section {
+        padding: 100px 20px;
+        min-height: auto;
+        display: block;
+    }
+    
+    .visa-container {
+        max-width: 1000px;
+        margin: 0 auto;
+        display: block;
+    }
+    
+    .visa-form-wrapper {
+        display: block;
+        padding: 50px;
+        width: 100%;
+    }
+    
+    .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+    }
+    
+    .form-row.full {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-row.three-col {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
