@@ -343,33 +343,4 @@
     }
 }
 
-/* Explicit Desktop/Laptop Display Fix */
-@media (min-width: 769px) {
-    .visa-section {
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        min-height: 100vh;
-        padding: 100px 20px;
-    }
 
-    .visa-container {
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        max-width: 1000px;
-        margin: 0 auto;
-        width: 100%;
-    }
-
-    .visa-form-wrapper {
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-    }
-
-    .visa-header {
-        display: block !important;
-        visibility: visible !important;
-    }
-}
