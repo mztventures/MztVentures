@@ -106,11 +106,12 @@ function setupScrollReveal() {
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('is-visible');
-            } else {
-                entry.target.classList.remove('is-visible');
+            if (!entry.isIntersecting) {
+                return;
             }
+    
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);  // ← Stop observing after first visibility
         });
     }, {
         threshold: 0.12,
