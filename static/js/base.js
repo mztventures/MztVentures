@@ -119,6 +119,12 @@ function setupScrollReveal() {
     });
 
     revealTargets.forEach((element) => observer.observe(element));
+         revealTargets.forEach((element) => {
+            const rect = element.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+                element.classList.add('is-visible');
+            }
+    });
 }
 
 function setupPageExitTransitions() {
