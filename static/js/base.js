@@ -118,7 +118,7 @@ function setupScrollReveal() {
         rootMargin: '0px 0px -8% 0px'
     });
 
-    revealTargets.forEach((element) => observer.observe(element));
+    // revealTargets.forEach((element) => observer.observe(element));
     revealTargets.forEach((element) => {
         const rect = element.getBoundingClientRect();
         if (rect.top < window.innerHeight && rect.bottom > 0) {
