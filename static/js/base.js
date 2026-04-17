@@ -77,8 +77,8 @@ function setupScrollReveal() {
         '.service-card',
         '.testimonial-card',
         '.contact-form',
-        '.visa-form-wrapper',
-        '.info-box',
+        // '.visa-form-wrapper',
+        // '.info-box',
         '.footer-section'
     ].join(','));
 
