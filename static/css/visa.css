@@ -343,38 +343,33 @@
     }
 }
 
-
-/* Desktop/Laptop View */
+/* Explicit Desktop/Laptop Display Fix */
 @media (min-width: 769px) {
     .visa-section {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        min-height: 100vh;
         padding: 100px 20px;
-        min-height: auto;
-        display: block;
     }
-    
+
     .visa-container {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
         max-width: 1000px;
         margin: 0 auto;
-        display: block;
-    }
-    
-    .visa-form-wrapper {
-        display: block;
-        padding: 50px;
         width: 100%;
     }
-    
-    .form-row {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 25px;
+
+    .visa-form-wrapper {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
     }
-    
-    .form-row.full {
-        grid-template-columns: 1fr;
-    }
-    
-    .form-row.three-col {
-        grid-template-columns: repeat(3, 1fr);
+
+    .visa-header {
+        display: block !important;
+        visibility: visible !important;
     }
 }
